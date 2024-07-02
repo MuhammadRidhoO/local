@@ -21,7 +21,8 @@ public class request_todo {
     private Boolean IsComplete;
 
     @Future(message = "FinishAt must be in the future")
-    private LocalDate FinishAt; 
+    private LocalDate FinishAt;
 
+    private Long user_entity_id;
 
 }

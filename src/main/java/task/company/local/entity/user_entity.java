@@ -1,11 +1,16 @@
 package task.company.local.entity;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,17 +19,26 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
+@Builder
 @Entity
 public class user_entity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false)
     private Long id;
 
-    @Column(unique = true)
+    @Column(nullable = false)
+    private String fullName;
+
+    @Column(unique = true, length = 100, nullable = false)
     private String email;
 
+    @Column(nullable = false)
     private String password;
 
-    private String fullName;
+
+    @OneToMany(mappedBy = "user_entity", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<todoList_entity> todoListEntities;
+
 }

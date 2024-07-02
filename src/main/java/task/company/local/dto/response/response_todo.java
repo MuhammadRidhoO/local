@@ -27,4 +27,6 @@ public class response_todo {
     private LocalDate FinishAt; 
 
     private long daysBetween;
+
+    private Long user_entity_id;
 }

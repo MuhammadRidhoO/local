@@ -1,11 +1,16 @@
-// package task.company.local.repositories;
+package task.company.local.repositories;
 
-// import org.springframework.data.jpa.repository.JpaRepository;
-// import org.springframework.stereotype.Repository;
+import java.util.Optional;
 
-// import task.company.local.entity.user_entity;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-// @Repository
-// public interface user_repository extends JpaRepository<user_entity,Long> {
-//     user_entity findByEmail(String email);
-// }
+import task.company.local.entity.user_entity;
+
+@Repository
+public interface user_repository extends JpaRepository<user_entity, Long> {
+
+    boolean existsByEmail(String email);
+
+    Optional<user_entity> findByEmail(String email);
+}

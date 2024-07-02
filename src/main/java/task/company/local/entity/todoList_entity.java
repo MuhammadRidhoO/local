@@ -7,8 +7,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -18,8 +21,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
+@Builder
 public class todoList_entity {
-    
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long Id;
@@ -34,8 +38,12 @@ public class todoList_entity {
 
   private LocalDateTime CreatedDate;
 
+  @ManyToOne
+  @JoinColumn(name = "user_entity_id")
+  private user_entity user_entity;
+
   @PrePersist
   protected void onCreate() {
-      CreatedDate = LocalDateTime.now();
+    CreatedDate = LocalDateTime.now();
   }
 }
