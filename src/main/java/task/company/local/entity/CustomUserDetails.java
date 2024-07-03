@@ -18,8 +18,10 @@ public class CustomUserDetails implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.emptyList();
     }
-    // public Collection<? extends GrantedAuthority> getAuthorities() {
-    // return user.getRoles(); // Asumsikan user memiliki daftar peran
+
+    // @Override
+    // public Long getId() {
+    //     return user.getId();
     // }
 
     @Override

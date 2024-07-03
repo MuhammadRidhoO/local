@@ -1,8 +1,9 @@
 package task.company.local.entity;
 
-import java.util.List;
+import java.util.Set;
 
-import jakarta.persistence.CascadeType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -38,7 +39,8 @@ public class user_entity {
     private String password;
 
 
-    @OneToMany(mappedBy = "user_entity", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<todoList_entity> todoListEntities;
+    @OneToMany(mappedBy = "user")
+    @JsonIgnore
+    private Set<todoList_entity> todoListEntities;
 
 }

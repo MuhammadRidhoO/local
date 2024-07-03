@@ -23,6 +23,7 @@ import jakarta.persistence.EntityNotFoundException;
 import task.company.local.config.JwtService;
 import task.company.local.dto.request.request_todo;
 import task.company.local.dto.request.request_update_todo;
+import task.company.local.dto.request.update_checkbox;
 import task.company.local.dto.response.response_todo;
 import task.company.local.entity.CustomUserDetails;
 import task.company.local.entity.todoList_entity;
@@ -52,19 +53,19 @@ public class todoList_controller {
 
     @GetMapping("/{id}")
     public ResponseEntity<response_todo> getById(@PathVariable("id") Long id) {
-        todoList_entity entity = todoList_service.findByIdTodo(id)
-                .orElseThrow(() -> new EntityNotFoundException("Todo not found with id: " + id));
+        todoList_entity entity = todoList_service.findByIdTodo(id);
 
         long daysBetween = todoList_service.calculateDaysBetweenCreatedAndFinish(entity);
 
         response_todo todoResponse = response_todo.builder()
                 .Id(entity.getId())
                 .SubTitle(entity.getSubTitle())
-                .Descraption(entity.getDescraption()) // Pastikan penamaan konsisten
+                .Descraption(entity.getDescraption())
                 .IsComplete(entity.getIsComplete())
                 .FinishAt(entity.getFinishAt())
                 .CreatedDate(entity.getCreatedDate())
                 .daysBetween(daysBetween)
+                .User_Id(id)
                 .build();
 
         return ResponseEntity.ok(todoResponse);
@@ -75,6 +76,7 @@ public class todoList_controller {
             @RequestHeader(HttpHeaders.AUTHORIZATION) String authHeader) {
 
         String token = authHeader.startsWith("Bearer ") ? authHeader.substring(7) : authHeader;
+
         Authentication authentication = jwtService.getAuthentication(token);
 
         if (authentication == null || !authentication.isAuthenticated()) {
@@ -87,18 +89,17 @@ public class todoList_controller {
         user_entity user = user_service.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
-        // Membuat Todo baru
         request_todo newTodo = request_todo.builder()
                 .SubTitle(dto.getSubTitle())
                 .Descraption(dto.getDescraption())
                 .IsComplete(false)
                 .FinishAt(dto.getFinishAt())
-                .user_entity_id(user.getId())
+                .User_Id(user.getId())
                 .build();
 
         todoList_entity savedTodo = todoList_service.CreateTodo(newTodo, email);
 
-        if (savedTodo.getUser_entity() == null) {
+        if (savedTodo.getUser() == null) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("Failed to associate the user with the todo item.");
         }
@@ -112,7 +113,7 @@ public class todoList_controller {
                 .IsComplete(savedTodo.getIsComplete())
                 .CreatedDate(savedTodo.getCreatedDate())
                 .FinishAt(savedTodo.getFinishAt())
-                .user_entity_id(savedTodo.getUser_entity().getId())
+                .User_Id(savedTodo.getUser().getId())
                 .daysBetween(daysBetween)
                 .build();
 
@@ -120,22 +121,31 @@ public class todoList_controller {
     }
 
     @PatchMapping("/{Id}")
-    public todoList_entity updateTodo(@PathVariable("Id") Long id, @RequestBody request_update_todo newTodoData) {
-        return todoList_service.updateTodo(id, newTodoData);
+    public ResponseEntity<todoList_entity> updateTodo(@PathVariable("Id") Long id,
+            @RequestBody request_update_todo newTodoData) {
+        try {
+            todoList_entity updatedTodo = todoList_service.updateTodoEntity(id, newTodoData);
+            return ResponseEntity.ok(updatedTodo);
+        } catch (EntityNotFoundException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
     }
 
     @PatchMapping("/checkbox/{Id}")
-    public ResponseEntity<?> updateIsComplete(@PathVariable("Id") Long Id, @RequestBody Map<String, Boolean> request) {
+    public ResponseEntity<?> updateIsComplete(@PathVariable("Id") Long id, @RequestBody Map<String, Boolean> request) {
         Boolean isComplete = request.get("isComplete");
         if (isComplete == null) {
             return ResponseEntity.badRequest().body("Invalid request payload");
         }
 
         try {
-            todoList_entity updatedTodo = todoList_service.updateCheckBoxTodo(Id, isComplete);
+            update_checkbox updatedTodo = todoList_service.updateCheckBoxTodo(id, isComplete);
+            // String responseMessage = "Todo with id: " + id + " successfully updated to
+            // isComplete: "
+            // + updatedTodo.getIsComplete();
             return ResponseEntity.ok(updatedTodo);
         } catch (EntityNotFoundException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Todo not found with id: " + Id);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Todo not found with id: " + id);
         }
     }
 

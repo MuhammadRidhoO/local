@@ -40,7 +40,7 @@ public class todoList_entity {
 
   @ManyToOne
   @JoinColumn(name = "user_entity_id")
-  private user_entity user_entity;
+  private user_entity user;
 
   @PrePersist
   protected void onCreate() {

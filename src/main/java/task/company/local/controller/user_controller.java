@@ -26,6 +26,7 @@ import task.company.local.dto.response.errorResponse;
 import task.company.local.dto.response.login_response;
 import task.company.local.dto.response.register_response;
 import task.company.local.dto.response.user_response;
+import task.company.local.entity.CustomUserDetails;
 import task.company.local.entity.user_entity;
 import task.company.local.service.user_service;
 
@@ -98,7 +99,8 @@ public class user_controller {
     System.out.println(authentication + " check dalam controller");
 
     if (authentication.isAuthenticated()) {
-      String jwtToken = jwtService.generateToken(email);
+      Long userId = ((CustomUserDetails) authentication.getPrincipal()).getUser().getId();
+      String jwtToken = jwtService.generateToken(email,userId);
       return ResponseEntity.ok(new login_response(email, jwtToken));
     } else {
       return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password.");

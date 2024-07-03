@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,12 +21,13 @@ import task.company.local.security.Bcrypt;
 @Service
 public class user_service {
 
-    private final user_repository user_repository;
+    @Autowired
+    private user_repository user_repository;
 
-    public user_service(
-            user_repository user_repository) {
-        this.user_repository = user_repository;
-    }
+    // public user_service(
+    // user_repository user_repository) {
+    // this.user_repository = user_repository;
+    // }
 
     @Transactional(readOnly = true)
     public List<user_response> getAllUsers() {
@@ -57,18 +59,25 @@ public class user_service {
                 .FinishAt(todo.getFinishAt())
                 .CreatedDate(todo.getCreatedDate())
                 .daysBetween(daysBetween)
-                .user_entity_id(todo.getUser_entity().getId())
+                .User_Id(todo.getUser().getId())
                 .build();
     }
-      public long calculateDaysBetweenCreatedAndFinish(todoList_entity todo) {
-    if (todo.getCreatedDate() != null && todo.getFinishAt() != null) {
-      return ChronoUnit.DAYS.between(todo.getCreatedDate().toLocalDate(), todo.getFinishAt());
-    }
-    return 0;
-  }
 
+    public long calculateDaysBetweenCreatedAndFinish(todoList_entity todo) {
+        if (todo.getCreatedDate() != null && todo.getFinishAt() != null) {
+            return ChronoUnit.DAYS.between(todo.getCreatedDate().toLocalDate(), todo.getFinishAt());
+        }
+        return 0;
+    }
+
+    @Transactional(readOnly = true)
     public Optional<user_entity> findByEmail(String email) {
         return user_repository.findByEmail(email);
+    }
+
+    @Transactional(readOnly = true)
+    public Optional<user_entity> findById(Long id) {
+        return user_repository.findById(id);
     }
 
     public user_entity RegisterUser(register_request request) throws UserAlreadyExistException {

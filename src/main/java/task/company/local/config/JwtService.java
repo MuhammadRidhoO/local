@@ -41,6 +41,11 @@ public class JwtService {
         this.key = Keys.hmacShaKeyFor(decodedKey);
     }
 
+    public Long getUserIdFromToken(String token) {
+        Claims claims = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token).getBody();
+        return claims.get("id", Long.class);
+    }
+
     public Authentication getAuthentication(String token) {
         String email = decodeToken(token);
         if (email != null) {
@@ -93,12 +98,13 @@ public class JwtService {
         return (email.equals(userDetails.getUsername()) && !isTokenExpired(token));
     }
 
-    public String generateToken(String email) {
+    public String generateToken(String email, Long Id) {
         Map<String, Object> claims = new HashMap<>();
-        return createToken(claims, email);
+        return createToken(claims, email, Id);
     }
 
-    private String createToken(Map<String, Object> claims, String email) {
+    private String createToken(Map<String, Object> claims, String email, Long Id) {
+        claims.put("id", Id);
         return Jwts.builder()
                 .setClaims(claims)
                 .setSubject(email)

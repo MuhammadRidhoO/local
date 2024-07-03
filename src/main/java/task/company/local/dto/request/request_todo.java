@@ -23,6 +23,6 @@ public class request_todo {
     @Future(message = "FinishAt must be in the future")
     private LocalDate FinishAt;
 
-    private Long user_entity_id;
+    private Long User_Id;
 
 }

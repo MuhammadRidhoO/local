@@ -3,18 +3,20 @@ package task.company.local.service;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.transaction.Transactional;
 import task.company.local.dto.request.request_todo;
 import task.company.local.dto.request.request_update_todo;
+import task.company.local.dto.request.update_checkbox;
 import task.company.local.dto.response.response_todo;
 import task.company.local.entity.todoList_entity;
 import task.company.local.entity.user_entity;
 import task.company.local.repositories.todoList_repository;
+import task.company.local.repositories.user_repository;
 
 @Service
 public class todoList_service {
@@ -23,12 +25,13 @@ public class todoList_service {
   private todoList_repository todolist_repository;
 
   @Autowired
-  private user_service userService;
+  private user_service user_service;
 
   public List<response_todo> getAllTodoList() {
     List<todoList_entity> todoList = todolist_repository.findAll();
     return todoList.stream().map(todo -> {
       long daysBetween = calculateDaysBetweenCreatedAndFinish(todo);
+      // System.out.println(todo.getUser().getId()+" check User_Id dalam findAll");
       return response_todo.builder()
           .Id(todo.getId())
           .SubTitle(todo.getSubTitle())
@@ -36,19 +39,21 @@ public class todoList_service {
           .IsComplete(todo.getIsComplete())
           .FinishAt(todo.getFinishAt())
           .CreatedDate(todo.getCreatedDate())
-          // .user_entity_id(todo.getUser_entity().getId())
+          .User_Id(todo.getUser().getId())
           .daysBetween(daysBetween)
           .build();
     }).toList();
   }
 
-  public Optional<todoList_entity> findByIdTodo(Long id) {
-    return todolist_repository.findById(id);
+  public todoList_entity findByIdTodo(Long Id) {
+    System.out.println(Id + " Id dalam service");
+    return todolist_repository.findById(Id)
+        .orElseThrow(() -> new EntityNotFoundException("Todo not found with id: " + Id));
   }
 
   public todoList_entity CreateTodo(request_todo dto, String userEmail) {
 
-    user_entity user = userService.findByEmail(userEmail)
+    user_entity user = user_service.findByEmail(userEmail)
         .orElseThrow(() -> new RuntimeException("User not found"));
 
     todoList_entity new_todoList_entity = new todoList_entity();
@@ -56,7 +61,7 @@ public class todoList_service {
     new_todoList_entity.setDescraption(dto.getDescraption());
     new_todoList_entity.setIsComplete(false);
     new_todoList_entity.setFinishAt(dto.getFinishAt());
-    new_todoList_entity.setUser_entity(user);
+    new_todoList_entity.setUser(user);
 
     todolist_repository.save(new_todoList_entity);
 
@@ -71,22 +76,27 @@ public class todoList_service {
     return ChronoUnit.DAYS.between(now, finishAt);
   }
 
-  public todoList_entity updateTodo(Long Id, request_update_todo updateTodo) {
-    return todolist_repository.findById(Id).map(todo -> {
+  @Transactional
+  public todoList_entity updateTodoEntity(Long id, request_update_todo updateTodo) {
+    return todolist_repository.findById(id).map(todo -> {
       todo.setDescraption(updateTodo.getDescraption());
       todo.setFinishAt(updateTodo.getFinishAt());
       todo.setIsComplete(updateTodo.getIsComplete());
       todo.setSubTitle(updateTodo.getSubTitle());
       return todolist_repository.save(todo);
-    }).orElseThrow(() -> new EntityNotFoundException("Todo not found with id: " + Id));
+    }).orElseThrow(() -> new EntityNotFoundException("Todo not found with id: " + id));
   }
 
-  public todoList_entity updateCheckBoxTodo(Long Id, Boolean IsComplete) {
-    todoList_entity todo = todolist_repository.findById(Id)
-        .orElseThrow(() -> new EntityNotFoundException("Todo not found with id: " + Id));
-    todo.setIsComplete(IsComplete);
-    todolist_repository.save(todo);
-    return todo;
+  public todoList_entity updateCheckBoxTodoEntity(Long id, Boolean isComplete) {
+    todoList_entity todo = todolist_repository.findById(id)
+        .orElseThrow(() -> new EntityNotFoundException("Todo not found with id: " + id));
+    todo.setIsComplete(isComplete);
+    return todolist_repository.save(todo);
+  }
+
+  public update_checkbox updateCheckBoxTodo(Long id, Boolean isComplete) {
+    todoList_entity updatedTodo = updateCheckBoxTodoEntity(id, isComplete);
+    return new update_checkbox(updatedTodo.getIsComplete());
   }
 
   public void deleteTodo(Long Id) {
