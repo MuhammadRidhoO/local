@@ -13,6 +13,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 public class request_update_todo {
+
+    private Long Id;
         
     private String SubTitle;
 

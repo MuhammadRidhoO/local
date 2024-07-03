@@ -121,10 +121,10 @@ public class todoList_controller {
     }
 
     @PatchMapping("/{Id}")
-    public ResponseEntity<todoList_entity> updateTodo(@PathVariable("Id") Long id,
+    public ResponseEntity<?> updateTodo(@PathVariable("Id") Long id,
             @RequestBody request_update_todo newTodoData) {
         try {
-            todoList_entity updatedTodo = todoList_service.updateTodoEntity(id, newTodoData);
+            request_update_todo updatedTodo = todoList_service.updateTodoEntity(id, newTodoData);
             return ResponseEntity.ok(updatedTodo);
         } catch (EntityNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);

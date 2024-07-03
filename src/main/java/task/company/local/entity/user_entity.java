@@ -1,5 +1,6 @@
 package task.company.local.entity;
 
+import java.util.List;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -40,7 +41,6 @@ public class user_entity {
 
 
     @OneToMany(mappedBy = "user")
-    @JsonIgnore
-    private Set<todoList_entity> todoListEntities;
+    private List<todoList_entity> todoListEntities;
 
 }

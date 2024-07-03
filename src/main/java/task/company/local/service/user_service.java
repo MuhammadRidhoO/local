@@ -6,12 +6,16 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import jakarta.persistence.EntityNotFoundException;
 import task.company.local.dto.request.register_request;
 import task.company.local.dto.response.UserAlreadyExistException;
 import task.company.local.dto.response.response_todo;
+import task.company.local.dto.response.response_todo_to_user;
+import task.company.local.dto.response.response_user_login;
 import task.company.local.dto.response.user_response;
 import task.company.local.entity.todoList_entity;
 import task.company.local.entity.user_entity;
@@ -93,4 +97,27 @@ public class user_service {
         return user_repository.save(newUser);
     }
 
+    public response_user_login getUserByUsername(String username) {
+        user_entity user = user_repository.findByEmailWithTodos(username)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found with username: " + username));
+
+        List<response_todo_to_user> todoList = user.getTodoListEntities().stream()
+                .map(todo -> response_todo_to_user.builder()
+                        .Id(todo.getId())
+                        .SubTitle(todo.getSubTitle())
+                        .Descraption(todo.getDescraption())
+                        .IsComplete(todo.getIsComplete())
+                        .FinishAt(todo.getFinishAt())
+                        .CreatedDate(todo.getCreatedDate())
+                        .daysBetween(calculateDaysBetweenCreatedAndFinish(todo))
+                        .build())
+                .collect(Collectors.toList());
+
+        return response_user_login.builder()
+                .Id(user.getId())
+                .FullName(user.getFullName())
+                .Email(user.getEmail())
+                .Todo_List_Entities(todoList)
+                .build();
+    }
 }

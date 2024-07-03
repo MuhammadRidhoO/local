@@ -9,6 +9,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +28,7 @@ import task.company.local.dto.response.UserAlreadyExistException;
 import task.company.local.dto.response.errorResponse;
 import task.company.local.dto.response.login_response;
 import task.company.local.dto.response.register_response;
+import task.company.local.dto.response.response_user_login;
 import task.company.local.dto.response.user_response;
 import task.company.local.entity.CustomUserDetails;
 import task.company.local.entity.user_entity;
@@ -100,12 +104,29 @@ public class user_controller {
 
     if (authentication.isAuthenticated()) {
       Long userId = ((CustomUserDetails) authentication.getPrincipal()).getUser().getId();
-      String jwtToken = jwtService.generateToken(email,userId);
+      String jwtToken = jwtService.generateToken(email, userId);
       return ResponseEntity.ok(new login_response(email, jwtToken));
     } else {
       return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password.");
     }
 
+  }
+
+  @GetMapping("/userlogin")
+  public ResponseEntity<?> getUserInfo() {
+    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    if (authentication != null && authentication.getPrincipal() instanceof UserDetails) {
+      UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+      String username = userDetails.getUsername();
+      try {
+        response_user_login userDto = user_service.getUserByUsername(username);
+        return ResponseEntity.ok(userDto);
+      } catch (UsernameNotFoundException e) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
+      }
+    } else {
+      return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("User not authenticated");
+    }
   }
 
 }

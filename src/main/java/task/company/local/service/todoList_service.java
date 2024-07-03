@@ -77,15 +77,24 @@ public class todoList_service {
   }
 
   @Transactional
-  public todoList_entity updateTodoEntity(Long id, request_update_todo updateTodo) {
+  public request_update_todo updateTodoEntity(Long id, request_update_todo updateTodo) {
     return todolist_repository.findById(id).map(todo -> {
-      todo.setDescraption(updateTodo.getDescraption());
-      todo.setFinishAt(updateTodo.getFinishAt());
-      todo.setIsComplete(updateTodo.getIsComplete());
-      todo.setSubTitle(updateTodo.getSubTitle());
-      return todolist_repository.save(todo);
+        todo.setDescraption(updateTodo.getDescraption());
+        todo.setFinishAt(updateTodo.getFinishAt());
+        todo.setIsComplete(updateTodo.getIsComplete());
+        todo.setSubTitle(updateTodo.getSubTitle());
+        todoList_entity updatedTodo = todolist_repository.save(todo);
+        
+        // Map updatedTodo to DTO
+        request_update_todo todoListDTO = new request_update_todo();
+        todoListDTO.setId(updatedTodo.getId());
+        todoListDTO.setDescraption(updatedTodo.getDescraption());
+        todoListDTO.setFinishAt(updatedTodo.getFinishAt());
+        todoListDTO.setIsComplete(updatedTodo.getIsComplete());
+        todoListDTO.setSubTitle(updatedTodo.getSubTitle());
+        return todoListDTO;
     }).orElseThrow(() -> new EntityNotFoundException("Todo not found with id: " + id));
-  }
+}
 
   public todoList_entity updateCheckBoxTodoEntity(Long id, Boolean isComplete) {
     todoList_entity todo = todolist_repository.findById(id)

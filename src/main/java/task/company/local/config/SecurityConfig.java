@@ -47,6 +47,7 @@ public class SecurityConfig {
                 .requestMatchers("/api/v1/todo/users").permitAll()
                 .requestMatchers("/api/v1/todo/users/register").permitAll()
                 .requestMatchers("/api/v1/todo/users/login").permitAll()
+                .requestMatchers("/api/v1/todo/userlogin").permitAll()
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
