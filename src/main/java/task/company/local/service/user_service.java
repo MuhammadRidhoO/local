@@ -10,7 +10,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import jakarta.persistence.EntityNotFoundException;
 import task.company.local.dto.request.register_request;
 import task.company.local.dto.response.UserAlreadyExistException;
 import task.company.local.dto.response.response_todo;
@@ -27,11 +26,6 @@ public class user_service {
 
     @Autowired
     private user_repository user_repository;
-
-    // public user_service(
-    // user_repository user_repository) {
-    // this.user_repository = user_repository;
-    // }
 
     @Transactional(readOnly = true)
     public List<user_response> getAllUsers() {

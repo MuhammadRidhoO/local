@@ -140,9 +140,6 @@ public class todoList_controller {
 
         try {
             update_checkbox updatedTodo = todoList_service.updateCheckBoxTodo(id, isComplete);
-            // String responseMessage = "Todo with id: " + id + " successfully updated to
-            // isComplete: "
-            // + updatedTodo.getIsComplete();
             return ResponseEntity.ok(updatedTodo);
         } catch (EntityNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Todo not found with id: " + id);

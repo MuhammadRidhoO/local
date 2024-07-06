@@ -1,0 +1,16 @@
+body {
+  background-image: url("/assets/image/todolist.avif");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.logoTODO{
+    width: 150px;
+    height: 70px;
+    padding: 0px;
+}
+
+.navbartop{
+    padding: 0px 50px 0px 50px;
+}
+

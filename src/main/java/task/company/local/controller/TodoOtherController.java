@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class TodoOtherController {
     @GetMapping("/")
-    public String todo(){
+    public String todo() {
         return "login";
     }
 }

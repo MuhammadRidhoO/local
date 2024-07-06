@@ -19,8 +19,6 @@ public class user_response {
 
     private String fullName;
 
-    private Long user_entity_id;
-
     private List<response_todo> todoList;
 
 }
