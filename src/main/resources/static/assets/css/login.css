@@ -1,16 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
 body {
-  background-image: url("/assets/image/todolist.avif");
+  background: url("/assets/image/bgTODOLIST.jpg") center/cover no-repeat;
+  height: 100vh;
+  width: 100%;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  padding: 0 10px;
+}
+
+.logoTODO {
+  width: 150px;
+  height: 70px;
+  padding: 0px;
+  background-image: url("/assets/image/LogoTodoList.png");
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
+  border: 0px;
+  border-radius: 100%;
+}
+.textLogo {
+  color: white;
+  font-family: "Times New Roman", Times, serif;
 }
 
-.logoTODO{
-    width: 150px;
-    height: 70px;
-    padding: 0px;
+.navbar {
+  display: flex;
+  padding: 22px 0;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.navbar .hamburger-btn {
+  display: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.navbar .logo {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
-.navbartop{
-    padding: 0px 50px 0px 50px;
+.menuNav {
+  display: flex;
 }
-

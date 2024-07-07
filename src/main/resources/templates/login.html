@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
@@ -13,167 +17,164 @@
     <link rel="stylesheet" href="/assets/css/login.css" />
   </head>
   <body>
-    <div class="navbartop">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/">
-            <img
-              class="logoTODO"
-              src="/assets/image/imageLogo.png.png"
-              alt=""
-            />
+    <header>
+      <nav class="navbar">
+        <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary"> -->
+        <span class="hamburger-btn material-symbols-rounded"> menu </span>
+        <!-- <div class="container-fluid"> -->
+        <div class="menuNav">
+          <a class="logo" href="/">
+            <img class="logoTODO" />
           </a>
-          <div class="d-flex gap-3" role="search">
-            <input
-              class="btn btn-primary"
+          <a class="logo" href="/todo">
+            <h2 class="textLogo">To do List</h2>
+          </a>
+        </div>
+        <div class="d-flex gap-3" role="search">
+          <input
+            id="registerButton"
+            class="btn btn-primary"
+            type="button"
+            value="Register"
+            data-bs-toggle="modal"
+            data-bs-target="#modalRegister"
+            data-bs-whatever="@modalregister"
+          />
+
+          <input
+            id="loginButton"
+            class="btn btn-primary"
+            type="button"
+            value="Login"
+            data-bs-toggle="modal"
+            data-bs-target="#modalLogin"
+            data-bs-whatever="@modalLogin"
+          />
+        </div>
+        <!-- </div> -->
+        <!-- </nav> -->
+      </nav>
+    </header>
+
+    <!-- Modal Register -->
+    <div
+      class="modal fade"
+      id="modalRegister"
+      tabindex="-1"
+      aria-labelledby="ModalRegisterUser"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="ModalRegisterUser">Register</h1>
+            <button
               type="button"
-              value="Resgister"
-              data-bs-toggle="modal"
-              data-bs-target="#modalRegister"
-              data-bs-whatever="@modalregister"
-            />
-            <div
-              class="modal fade"
-              id="modalRegister"
-              tabindex="-1"
-              aria-labelledby="ModalRegisterUser"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="ModalRegisterUser">
-                      Register
-                    </h1>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div class="modal-body">
-                    <form id="RegisterUsers">
-                      <div class="mb-3">
-                        <label for="registerUsers" class="col-form-label"
-                          >Full Name:</label
-                        >
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="registerUsers"
-                        />
-                      </div>
-                      <div class="mb-3">
-                        <label for="registerEmail" class="col-form-label"
-                          >Email:</label
-                        >
-                        <input class="form-control" id="registerEmail" />
-                      </div>
-                      <div class="mb-3">
-                        <label for="registerPassword" class="col-form-label"
-                          >Password:</label
-                        >
-                        <input
-                          class="form-control"
-                          id="registerPassword"
-                          type="password"
-                        />
-                      </div>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button
-                      type="button"
-                      class="btn btn-danger"
-                      data-bs-dismiss="modal"
-                    >
-                      Close
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-success"
-                      onclick="registerUser()"
-                    >
-                      Register
-                    </button>
-                  </div>
-                </div>
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="RegisterUsers">
+              <div class="mb-3">
+                <label for="registerUsers" class="col-form-label"
+                  >Full Name:</label
+                >
+                <input type="text" class="form-control" id="registerUsers" />
               </div>
-            </div>
-            <input
-              class="btn btn-primary"
+              <div class="mb-3">
+                <label for="registerEmail" class="col-form-label">Email:</label>
+                <input class="form-control" id="registerEmail" />
+              </div>
+              <div class="mb-3">
+                <label for="registerPassword" class="col-form-label"
+                  >Password:</label
+                >
+                <input
+                  class="form-control"
+                  id="registerPassword"
+                  type="password"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
               type="button"
-              value="Login"
-              data-bs-toggle="modal"
-              data-bs-target="#modalLogin"
-              data-bs-whatever="@modalLogin"
-            />
-            <div
-              class="modal fade"
-              id="modalLogin"
-              tabindex="-1"
-              aria-labelledby="modalLoginUser"
-              aria-hidden="true"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
             >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="modalLoginUser">Login</h1>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div class="modal-body">
-                    <form>
-                      <div class="mb-3">
-                        <label for="message-text" class="col-form-label"
-                          >Email:</label
-                        >
-                        <input
-                          class="form-control"
-                          id="loginEmail"
-                          type="email"
-                        />
-                      </div>
-                      <div class="mb-3">
-                        <label for="message-text" class="col-form-label"
-                          >Password:</label
-                        >
-                        <input
-                          class="form-control"
-                          id="loginPassword"
-                          type="password"
-                        />
-                      </div>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button
-                      type="button"
-                      class="btn btn-danger"
-                      data-bs-dismiss="modal"
-                    >
-                      Close
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-success"
-                      id="loginBtn"
-                      onclick="loginUser()"
-                    >
-                      Login
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              onclick="registerUser()"
+            >
+              Register
+            </button>
           </div>
         </div>
-      </nav>
+      </div>
+    </div>
+
+    <!-- Modal Login -->
+    <div
+      class="modal fade"
+      id="modalLogin"
+      tabindex="-1"
+      aria-labelledby="modalLoginUser"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="modalLoginUser">Login</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">Email:</label>
+                <input class="form-control" id="loginEmail" type="email" />
+              </div>
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label"
+                  >Password:</label
+                >
+                <input
+                  class="form-control"
+                  id="loginPassword"
+                  type="password"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              id="loginBtn"
+              onclick="loginUser()"
+            >
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script
@@ -182,83 +183,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      // ===== Register POST =====
-
-      function registerUser() {
-        const registerData = {
-          fullName: $("#registerUsers").val(),
-          email: $("#registerEmail").val(),
-          password: $("#registerPassword").val(),
-        };
-        $.ajax({
-          type: "POST",
-          url: "/api/v1/todo/users/register",
-          data: JSON.stringify(registerData),
-          contentType: "application/json",
-          success: function (response) {
-            alert("Success to Register");
-            $("#modalRegister").modal("hide");
-            $("#modalLogin").modal("show");
-          },
-          error: function () {
-            alert("Failed to Register try again");
-          },
-        });
-      }
-
-      // ===== Function to set a cookie =====
-
-      function setCookie(name, value, days) {
-        var expires = "";
-        if (days) {
-          var date = new Date();
-          date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-          expires = "; expires=" + date.toUTCString();
-        }
-        document.cookie = name + "=" + (value || "") + expires + "; path=/";
-      }
-
-      // ===== Function to get a cookie =====
-
-      function getCookie(name) {
-        var nameEQ = name + "=";
-        var ca = document.cookie.split(";");
-        for (var i = 0; i < ca.length; i++) {
-          var c = ca[i];
-          while (c.charAt(0) == " ") c = c.substring(1, c.length);
-          if (c.indexOf(nameEQ) == 0)
-            return c.substring(nameEQ.length, c.length);
-        }
-        console.log(name + " ini name pada login.html")
-        return null;
-      }
-
-      // ===== Login POST =====
-
-      function loginUser() {
-        const loginData = {
-          email: $("#loginEmail").val(),
-          password: $("#loginPassword").val(),
-        };
-        $.ajax({
-          type: "POST",
-          url: "/api/v1/todo/users/login",
-          data: JSON.stringify(loginData),
-          contentType: "application/json",
-          success: function (response) {
-            alert("Login Successful");
-            setCookie("token", response.token, 7);
-            $("#modalLogin").modal("hide");
-            window.location.href = "/todo";
-          },
-          error: function () {
-            alert(
-              "Failed to login. Please check your credentials and try again."
-            );
-          },
-        });
-      }
-    </script>
+    <script src="assets/js/login.js"></script>
   </body>
 </html>

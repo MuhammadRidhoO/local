@@ -1,3 +1,31 @@
 .completed {
-    text-decoration: line-through;
+  text-decoration: line-through;
+  text-decoration-color: rgb(124, 25, 25);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+}
+.fixed-alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1050;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.alert-sm {
+  width: auto;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+}
+
+.mb-0 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+}
+.fs-3 {
+  text-decoration: none;
+  color: black;
 }

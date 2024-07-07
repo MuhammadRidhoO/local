@@ -36,6 +36,7 @@ public class SecurityConfig {
         return http.csrf().disable()
                 .authorizeHttpRequests()
                 .requestMatchers("/").permitAll()
+                .requestMatchers("/loginOther").permitAll()
                 .requestMatchers("/todo").permitAll()
                 .requestMatchers("/todo/{Id}").permitAll()
                 .requestMatchers("/todo/{id}").permitAll()
