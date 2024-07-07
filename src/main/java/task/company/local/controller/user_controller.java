@@ -83,14 +83,8 @@ public class user_controller {
     System.out.println(bindingResult.hasErrors() + " Check isinya");
 
     String email = login_Request.getEmail();
-    String Password = login_Request.getPassword();
-
-    System.out.println(email + " Check dalam email controller");
-    System.out.println(Password + " Check dalam password controller");
 
     Optional<user_entity> userOptional = user_service.findByEmail(email);
-
-    System.out.println(userOptional + " Check dalam userOptional");
 
     if (userOptional.isEmpty()) {
       return ResponseEntity.status(HttpStatus.UNAUTHORIZED)

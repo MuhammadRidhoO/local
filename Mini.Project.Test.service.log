@@ -997,3 +997,264 @@ task.company.local.controller.loginHTML#todo() mapped.
 2024-07-07T16:34:49.468+07:00  INFO 7628 --- [local] [http-nio-8080-exec-2] t.c.local.config.UserDetailsServiceImpl  : User Authenticated Successfully..!!!
 2024-07-07T16:34:50.769+07:00  INFO 7628 --- [local] [http-nio-8080-exec-1] t.c.local.config.UserDetailsServiceImpl  : User Authenticated Successfully..!!!
 2024-07-07T16:34:53.343+07:00  INFO 7628 --- [local] [http-nio-8080-exec-1] t.c.local.config.UserDetailsServiceImpl  : User Authenticated Successfully..!!!
+2024-07-07T17:21:04.118+07:00  INFO 7628 --- [local] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-07-07T17:21:04.423+07:00  INFO 7628 --- [local] [Thread-48] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07T17:21:04.445+07:00  INFO 7628 --- [local] [Thread-48] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Shutdown initiated...
+2024-07-07T17:21:04.454+07:00  INFO 7628 --- [local] [Thread-48] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Shutdown completed.
+2024-07-07T17:21:04.826+07:00  INFO 7628 --- [local] [restartedMain] task.company.local.LocalApplication      : Starting LocalApplication using Java 17.0.10 with PID 7628 (D:\Muhammad Ridho\Kumpulan Beberapa Bahasa Pemograman\local\target\classes started by Asus in D:\Muhammad Ridho\Kumpulan Beberapa Bahasa Pemograman\local)
+2024-07-07T17:21:04.827+07:00  INFO 7628 --- [local] [restartedMain] task.company.local.LocalApplication      : No active profile set, falling back to 1 default profile: "default"
+2024-07-07T17:21:05.851+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-07T17:21:05.851+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-07-07T17:21:05.860+07:00  INFO 7628 --- [local] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface task.company.local.repositories.todoList_repository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-07T17:21:05.861+07:00  INFO 7628 --- [local] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface task.company.local.repositories.user_repository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-07T17:21:05.862+07:00  INFO 7628 --- [local] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface task.company.local.service.user_repository_auth; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-07T17:21:05.862+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+2024-07-07T17:21:05.869+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-07T17:21:05.869+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-07T17:21:05.886+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 3 JPA repository interfaces.
+2024-07-07T17:21:06.531+07:00  INFO 7628 --- [local] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-07T17:21:06.533+07:00  INFO 7628 --- [local] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-07T17:21:06.533+07:00  INFO 7628 --- [local] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-07T17:21:06.564+07:00  INFO 7628 --- [local] [restartedMain] o.a.c.c.C.[Tomcat-3].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-07-07T17:21:06.564+07:00  INFO 7628 --- [local] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1733 ms
+2024-07-07T17:21:06.929+07:00  INFO 7628 --- [local] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-07T17:21:06.934+07:00  INFO 7628 --- [local] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-07T17:21:06.949+07:00  INFO 7628 --- [local] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-07T17:21:06.951+07:00  INFO 7628 --- [local] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Starting...
+2024-07-07T17:21:07.034+07:00  INFO 7628 --- [local] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-14 - Added connection org.postgresql.jdbc.PgConnection@1660e83f
+2024-07-07T17:21:07.034+07:00  INFO 7628 --- [local] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Start completed.
+2024-07-07T17:21:07.034+07:00  WARN 7628 --- [local] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-07T17:21:07.192+07:00  INFO 7628 --- [local] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-07T17:21:07.318+07:00  INFO 7628 --- [local] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07T17:21:07.834+07:00  WARN 7628 --- [local] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'user_controller' defined in file [D:\Muhammad Ridho\Kumpulan Beberapa Bahasa Pemograman\local\target\classes\task\company\local\controller\user_controller.class]: Failed to instantiate [task.company.local.controller.user_controller]: Constructor threw exception
+2024-07-07T17:21:07.834+07:00  INFO 7628 --- [local] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07T17:21:07.835+07:00  INFO 7628 --- [local] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Shutdown initiated...
+2024-07-07T17:21:07.933+07:00  INFO 7628 --- [local] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Shutdown completed.
+2024-07-07T17:21:07.935+07:00  INFO 7628 --- [local] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-07-07T17:21:07.948+07:00  INFO 7628 --- [local] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-07-07T17:21:07.952+07:00 ERROR 7628 --- [local] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'user_controller' defined in file [D:\Muhammad Ridho\Kumpulan Beberapa Bahasa Pemograman\local\target\classes\task\company\local\controller\user_controller.class]: Failed to instantiate [task.company.local.controller.user_controller]: Constructor threw exception
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1319) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.1.jar:3.3.1]
+	at task.company.local.LocalApplication.main(LocalApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.1.jar:3.3.1]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [task.company.local.controller.user_controller]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:221) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:88) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1313) ~[spring-beans-6.1.10.jar:6.1.10]
+	... 22 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problem: 
+	The blank final field user_service may not have been initialized
+
+	at task.company.local.controller.user_controller.<init>(user_controller.java:48) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:195) ~[spring-beans-6.1.10.jar:6.1.10]
+	... 24 common frames omitted
+
+2024-07-07T17:21:10.426+07:00  INFO 7628 --- [local] [restartedMain] task.company.local.LocalApplication      : Starting LocalApplication using Java 17.0.10 with PID 7628 (D:\Muhammad Ridho\Kumpulan Beberapa Bahasa Pemograman\local\target\classes started by Asus in D:\Muhammad Ridho\Kumpulan Beberapa Bahasa Pemograman\local)
+2024-07-07T17:21:10.426+07:00  INFO 7628 --- [local] [restartedMain] task.company.local.LocalApplication      : No active profile set, falling back to 1 default profile: "default"
+2024-07-07T17:21:10.755+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-07T17:21:10.755+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-07-07T17:21:10.755+07:00  INFO 7628 --- [local] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface task.company.local.repositories.todoList_repository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-07T17:21:10.755+07:00  INFO 7628 --- [local] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface task.company.local.repositories.user_repository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-07T17:21:10.755+07:00  INFO 7628 --- [local] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface task.company.local.service.user_repository_auth; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-07T17:21:10.755+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
+2024-07-07T17:21:10.755+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-07T17:21:10.755+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-07T17:21:10.771+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 3 JPA repository interfaces.
+2024-07-07T17:21:10.910+07:00  INFO 7628 --- [local] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-07T17:21:10.911+07:00  INFO 7628 --- [local] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-07T17:21:10.911+07:00  INFO 7628 --- [local] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-07T17:21:10.930+07:00  INFO 7628 --- [local] [restartedMain] o.a.c.c.C.[Tomcat-4].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-07-07T17:21:10.930+07:00  INFO 7628 --- [local] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 503 ms
+2024-07-07T17:21:11.092+07:00  INFO 7628 --- [local] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-07T17:21:11.092+07:00  INFO 7628 --- [local] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-07T17:21:11.092+07:00  INFO 7628 --- [local] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-07T17:21:11.092+07:00  INFO 7628 --- [local] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Starting...
+2024-07-07T17:21:11.124+07:00  INFO 7628 --- [local] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-15 - Added connection org.postgresql.jdbc.PgConnection@123ca967
+2024-07-07T17:21:11.124+07:00  INFO 7628 --- [local] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Start completed.
+2024-07-07T17:21:11.140+07:00  WARN 7628 --- [local] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-07T17:21:11.171+07:00  INFO 7628 --- [local] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-07T17:21:11.202+07:00  INFO 7628 --- [local] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07T17:21:11.432+07:00  INFO 7628 --- [local] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-07-07T17:21:11.439+07:00  WARN 7628 --- [local] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-07-07T17:21:11.549+07:00  INFO 7628 --- [local] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-07-07T17:21:11.864+07:00  INFO 7628 --- [local] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-07-07T17:21:12.299+07:00  INFO 7628 --- [local] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-07T17:21:12.336+07:00  INFO 7628 --- [local] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-07T17:21:12.346+07:00  INFO 7628 --- [local] [restartedMain] task.company.local.LocalApplication      : Started LocalApplication in 1.936 seconds (process running for 16574.204)
+2024-07-07T17:21:12.346+07:00  INFO 7628 --- [local] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-07-07T17:21:24.959+07:00  INFO 7628 --- [local] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-07-07T17:21:25.141+07:00  INFO 7628 --- [local] [Thread-52] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07T17:21:25.142+07:00  INFO 7628 --- [local] [Thread-52] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Shutdown initiated...
+2024-07-07T17:21:25.147+07:00  INFO 7628 --- [local] [Thread-52] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Shutdown completed.
+2024-07-07T17:21:25.283+07:00  INFO 7628 --- [local] [restartedMain] task.company.local.LocalApplication      : Starting LocalApplication using Java 17.0.10 with PID 7628 (D:\Muhammad Ridho\Kumpulan Beberapa Bahasa Pemograman\local\target\classes started by Asus in D:\Muhammad Ridho\Kumpulan Beberapa Bahasa Pemograman\local)
+2024-07-07T17:21:25.283+07:00  INFO 7628 --- [local] [restartedMain] task.company.local.LocalApplication      : No active profile set, falling back to 1 default profile: "default"
+2024-07-07T17:21:25.557+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-07T17:21:25.557+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-07-07T17:21:25.562+07:00  INFO 7628 --- [local] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface task.company.local.repositories.todoList_repository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-07T17:21:25.562+07:00  INFO 7628 --- [local] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface task.company.local.repositories.user_repository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-07T17:21:25.563+07:00  INFO 7628 --- [local] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface task.company.local.service.user_repository_auth; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-07T17:21:25.563+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
+2024-07-07T17:21:25.566+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-07T17:21:25.567+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-07T17:21:25.574+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 3 JPA repository interfaces.
+2024-07-07T17:21:25.759+07:00  INFO 7628 --- [local] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-07T17:21:25.760+07:00  INFO 7628 --- [local] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-07T17:21:25.760+07:00  INFO 7628 --- [local] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-07T17:21:25.777+07:00  INFO 7628 --- [local] [restartedMain] o.a.c.c.C.[Tomcat-4].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-07-07T17:21:25.777+07:00  INFO 7628 --- [local] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 491 ms
+2024-07-07T17:21:25.985+07:00  INFO 7628 --- [local] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-07T17:21:25.987+07:00  INFO 7628 --- [local] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-07T17:21:25.993+07:00  INFO 7628 --- [local] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-07T17:21:25.994+07:00  INFO 7628 --- [local] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Starting...
+2024-07-07T17:21:26.041+07:00  INFO 7628 --- [local] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-16 - Added connection org.postgresql.jdbc.PgConnection@509e5af8
+2024-07-07T17:21:26.041+07:00  INFO 7628 --- [local] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Start completed.
+2024-07-07T17:21:26.049+07:00  WARN 7628 --- [local] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-07T17:21:26.103+07:00  INFO 7628 --- [local] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-07T17:21:26.133+07:00  INFO 7628 --- [local] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07T17:21:26.411+07:00  INFO 7628 --- [local] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-07-07T17:21:26.411+07:00  WARN 7628 --- [local] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-07-07T17:21:26.493+07:00  INFO 7628 --- [local] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-07-07T17:21:26.890+07:00  INFO 7628 --- [local] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-07-07T17:21:27.323+07:00  INFO 7628 --- [local] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-07T17:21:27.340+07:00  INFO 7628 --- [local] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-07T17:21:27.347+07:00  INFO 7628 --- [local] [restartedMain] task.company.local.LocalApplication      : Started LocalApplication in 2.09 seconds (process running for 16589.204)
+2024-07-07T17:21:27.349+07:00  INFO 7628 --- [local] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-07-07T17:21:55.294+07:00  INFO 7628 --- [local] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-07-07T17:21:55.441+07:00  INFO 7628 --- [local] [Thread-59] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07T17:21:55.441+07:00  INFO 7628 --- [local] [Thread-59] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Shutdown initiated...
+2024-07-07T17:21:55.457+07:00  INFO 7628 --- [local] [Thread-59] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Shutdown completed.
+2024-07-07T17:21:55.562+07:00  INFO 7628 --- [local] [restartedMain] task.company.local.LocalApplication      : Starting LocalApplication using Java 17.0.10 with PID 7628 (D:\Muhammad Ridho\Kumpulan Beberapa Bahasa Pemograman\local\target\classes started by Asus in D:\Muhammad Ridho\Kumpulan Beberapa Bahasa Pemograman\local)
+2024-07-07T17:21:55.562+07:00  INFO 7628 --- [local] [restartedMain] task.company.local.LocalApplication      : No active profile set, falling back to 1 default profile: "default"
+2024-07-07T17:21:55.814+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-07T17:21:55.815+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-07-07T17:21:55.822+07:00  INFO 7628 --- [local] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface task.company.local.repositories.todoList_repository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-07T17:21:55.824+07:00  INFO 7628 --- [local] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface task.company.local.repositories.user_repository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-07T17:21:55.825+07:00  INFO 7628 --- [local] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface task.company.local.service.user_repository_auth; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-07T17:21:55.825+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+2024-07-07T17:21:55.830+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-07T17:21:55.830+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-07T17:21:55.838+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 3 JPA repository interfaces.
+2024-07-07T17:21:56.024+07:00  INFO 7628 --- [local] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-07T17:21:56.025+07:00  INFO 7628 --- [local] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-07T17:21:56.025+07:00  INFO 7628 --- [local] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-07T17:21:56.038+07:00  INFO 7628 --- [local] [restartedMain] o.a.c.c.C.[Tomcat-4].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-07-07T17:21:56.038+07:00  INFO 7628 --- [local] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 475 ms
+2024-07-07T17:21:56.204+07:00  INFO 7628 --- [local] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-07T17:21:56.207+07:00  INFO 7628 --- [local] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-07T17:21:56.215+07:00  INFO 7628 --- [local] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-07T17:21:56.215+07:00  INFO 7628 --- [local] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Starting...
+2024-07-07T17:21:56.271+07:00  INFO 7628 --- [local] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-17 - Added connection org.postgresql.jdbc.PgConnection@18143df3
+2024-07-07T17:21:56.271+07:00  INFO 7628 --- [local] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Start completed.
+2024-07-07T17:21:56.277+07:00  WARN 7628 --- [local] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-07T17:21:56.328+07:00  INFO 7628 --- [local] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-07T17:21:56.355+07:00  INFO 7628 --- [local] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07T17:21:56.580+07:00  INFO 7628 --- [local] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-07-07T17:21:56.581+07:00  WARN 7628 --- [local] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-07-07T17:21:56.647+07:00  INFO 7628 --- [local] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-07-07T17:21:57.012+07:00  INFO 7628 --- [local] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-07-07T17:21:57.443+07:00  INFO 7628 --- [local] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-07T17:21:57.464+07:00  INFO 7628 --- [local] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-07T17:21:57.472+07:00  INFO 7628 --- [local] [restartedMain] task.company.local.LocalApplication      : Started LocalApplication in 1.929 seconds (process running for 16619.329)
+2024-07-07T17:21:57.474+07:00  INFO 7628 --- [local] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-07-07T17:22:18.302+07:00  INFO 7628 --- [local] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-07-07T17:22:18.441+07:00  INFO 7628 --- [local] [Thread-63] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07T17:22:18.457+07:00  INFO 7628 --- [local] [Thread-63] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Shutdown initiated...
+2024-07-07T17:22:18.460+07:00  INFO 7628 --- [local] [Thread-63] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Shutdown completed.
+2024-07-07T17:22:18.555+07:00  INFO 7628 --- [local] [restartedMain] task.company.local.LocalApplication      : Starting LocalApplication using Java 17.0.10 with PID 7628 (D:\Muhammad Ridho\Kumpulan Beberapa Bahasa Pemograman\local\target\classes started by Asus in D:\Muhammad Ridho\Kumpulan Beberapa Bahasa Pemograman\local)
+2024-07-07T17:22:18.555+07:00  INFO 7628 --- [local] [restartedMain] task.company.local.LocalApplication      : No active profile set, falling back to 1 default profile: "default"
+2024-07-07T17:22:19.128+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-07T17:22:19.128+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-07-07T17:22:19.143+07:00  INFO 7628 --- [local] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface task.company.local.repositories.todoList_repository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-07T17:22:19.144+07:00  INFO 7628 --- [local] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface task.company.local.repositories.user_repository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-07T17:22:19.145+07:00  INFO 7628 --- [local] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface task.company.local.service.user_repository_auth; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-07T17:22:19.145+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 0 JDBC repository interfaces.
+2024-07-07T17:22:19.153+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-07T17:22:19.153+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-07T17:22:19.163+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 3 JPA repository interfaces.
+2024-07-07T17:22:19.406+07:00  INFO 7628 --- [local] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-07T17:22:19.407+07:00  INFO 7628 --- [local] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-07T17:22:19.407+07:00  INFO 7628 --- [local] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-07T17:22:19.425+07:00  INFO 7628 --- [local] [restartedMain] o.a.c.c.C.[Tomcat-4].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-07-07T17:22:19.425+07:00  INFO 7628 --- [local] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 868 ms
+2024-07-07T17:22:19.596+07:00  INFO 7628 --- [local] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-07T17:22:19.597+07:00  INFO 7628 --- [local] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-07T17:22:19.602+07:00  INFO 7628 --- [local] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-07T17:22:19.603+07:00  INFO 7628 --- [local] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-18 - Starting...
+2024-07-07T17:22:19.656+07:00  INFO 7628 --- [local] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Added connection org.postgresql.jdbc.PgConnection@c8bc784
+2024-07-07T17:22:19.656+07:00  INFO 7628 --- [local] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-18 - Start completed.
+2024-07-07T17:22:19.665+07:00  WARN 7628 --- [local] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-07T17:22:19.721+07:00  INFO 7628 --- [local] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-07T17:22:19.757+07:00  INFO 7628 --- [local] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07T17:22:20.009+07:00  INFO 7628 --- [local] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-07-07T17:22:20.009+07:00  WARN 7628 --- [local] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-07-07T17:22:20.071+07:00  INFO 7628 --- [local] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-07-07T17:22:20.436+07:00  INFO 7628 --- [local] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-07-07T17:22:20.830+07:00  INFO 7628 --- [local] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-07T17:22:20.849+07:00  INFO 7628 --- [local] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-07T17:22:20.857+07:00  INFO 7628 --- [local] [restartedMain] task.company.local.LocalApplication      : Started LocalApplication in 2.329 seconds (process running for 16642.714)
+2024-07-07T17:22:20.859+07:00  INFO 7628 --- [local] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-07-07T17:23:18.518+07:00  INFO 7628 --- [local] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 16 class path changes (0 additions, 0 deletions, 16 modifications)
+2024-07-07T17:23:18.721+07:00  INFO 7628 --- [local] [Thread-67] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07T17:23:18.722+07:00  INFO 7628 --- [local] [Thread-67] com.zaxxer.hikari.HikariDataSource       : HikariPool-18 - Shutdown initiated...
+2024-07-07T17:23:18.722+07:00  INFO 7628 --- [local] [Thread-67] com.zaxxer.hikari.HikariDataSource       : HikariPool-18 - Shutdown completed.
+2024-07-07T17:23:18.837+07:00  INFO 7628 --- [local] [restartedMain] task.company.local.LocalApplication      : Starting LocalApplication using Java 17.0.10 with PID 7628 (D:\Muhammad Ridho\Kumpulan Beberapa Bahasa Pemograman\local\target\classes started by Asus in D:\Muhammad Ridho\Kumpulan Beberapa Bahasa Pemograman\local)
+2024-07-07T17:23:18.837+07:00  INFO 7628 --- [local] [restartedMain] task.company.local.LocalApplication      : No active profile set, falling back to 1 default profile: "default"
+2024-07-07T17:23:19.176+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-07T17:23:19.176+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-07-07T17:23:19.182+07:00  INFO 7628 --- [local] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface task.company.local.repositories.todoList_repository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-07T17:23:19.182+07:00  INFO 7628 --- [local] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface task.company.local.repositories.user_repository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-07T17:23:19.183+07:00  INFO 7628 --- [local] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface task.company.local.service.user_repository_auth; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-07T17:23:19.183+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+2024-07-07T17:23:19.187+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-07T17:23:19.188+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-07T17:23:19.194+07:00  INFO 7628 --- [local] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 3 JPA repository interfaces.
+2024-07-07T17:23:19.366+07:00  INFO 7628 --- [local] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-07T17:23:19.367+07:00  INFO 7628 --- [local] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-07T17:23:19.367+07:00  INFO 7628 --- [local] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-07T17:23:19.383+07:00  INFO 7628 --- [local] [restartedMain] o.a.c.c.C.[Tomcat-4].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-07-07T17:23:19.383+07:00  INFO 7628 --- [local] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 544 ms
+2024-07-07T17:23:19.560+07:00  INFO 7628 --- [local] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-07T17:23:19.562+07:00  INFO 7628 --- [local] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-07T17:23:19.567+07:00  INFO 7628 --- [local] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-07T17:23:19.568+07:00  INFO 7628 --- [local] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Starting...
+2024-07-07T17:23:19.611+07:00  INFO 7628 --- [local] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-19 - Added connection org.postgresql.jdbc.PgConnection@6b9e0200
+2024-07-07T17:23:19.611+07:00  INFO 7628 --- [local] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Start completed.
+2024-07-07T17:23:19.618+07:00  WARN 7628 --- [local] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-07T17:23:19.675+07:00  INFO 7628 --- [local] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-07T17:23:19.705+07:00  INFO 7628 --- [local] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07T17:23:19.947+07:00  INFO 7628 --- [local] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-07-07T17:23:19.947+07:00  WARN 7628 --- [local] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-07-07T17:23:20.047+07:00  INFO 7628 --- [local] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-07-07T17:23:20.455+07:00  INFO 7628 --- [local] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-07-07T17:23:20.962+07:00  INFO 7628 --- [local] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-07T17:23:20.982+07:00  INFO 7628 --- [local] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-07T17:23:20.991+07:00  INFO 7628 --- [local] [restartedMain] task.company.local.LocalApplication      : Started LocalApplication in 2.174 seconds (process running for 16702.847)
+2024-07-07T17:23:20.993+07:00  INFO 7628 --- [local] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
