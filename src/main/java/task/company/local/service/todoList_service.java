@@ -1,5 +1,6 @@
 package task.company.local.service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
@@ -30,7 +31,6 @@ public class todoList_service {
     List<todoList_entity> todoList = todolist_repository.findAll();
     return todoList.stream().map(todo -> {
       long daysBetween = calculateDaysBetweenCreatedAndFinish(todo);
-      // System.out.println(todo.getUser().getId()+" check User_Id dalam findAll");
       return response_todo.builder()
           .Id(todo.getId())
           .SubTitle(todo.getSubTitle())
@@ -45,15 +45,18 @@ public class todoList_service {
   }
 
   public todoList_entity findByIdTodo(Long Id) {
-    System.out.println(Id + " Id dalam service");
     return todolist_repository.findById(Id)
-        .orElseThrow(() -> new EntityNotFoundException("Todo not found with id: " + Id));
+        .orElseThrow(() -> new EntityNotFoundException("To do list dengan Id ini: " + Id + " tidak ditemukan"));
   }
 
   public todoList_entity CreateTodo(request_todo dto, String userEmail) {
 
     user_entity user = user_service.findByEmail(userEmail)
-        .orElseThrow(() -> new RuntimeException("User not found"));
+        .orElseThrow(() -> new RuntimeException("User tidak ditemukan"));
+
+    if (dto.getFinishAt().isBefore(LocalDate.now())) {
+      throw new IllegalArgumentException("Tanggal ini sudah lewat tidak bisa digunakan.");
+    }
 
     todoList_entity new_todoList_entity = new todoList_entity();
     new_todoList_entity.setSubTitle(dto.getSubTitle());
@@ -63,8 +66,6 @@ public class todoList_service {
     new_todoList_entity.setUser(user);
 
     todolist_repository.save(new_todoList_entity);
-
-    System.out.println(new_todoList_entity + " Check Post Todo in Service");
 
     return new_todoList_entity;
 
@@ -77,6 +78,9 @@ public class todoList_service {
 
   @Transactional
   public request_update_todo updateTodoEntity(Long id, request_update_todo updateTodo) {
+    if (updateTodo.getFinishAt().isBefore(LocalDate.now())) {
+      throw new IllegalArgumentException("Tanggal ini sudah lewat tidak bisa digunakan.");
+    }
     return todolist_repository.findById(id).map(todo -> {
       todo.setDescraption(updateTodo.getDescraption());
       todo.setFinishAt(updateTodo.getFinishAt());
@@ -84,7 +88,6 @@ public class todoList_service {
       todo.setSubTitle(updateTodo.getSubTitle());
       todoList_entity updatedTodo = todolist_repository.save(todo);
 
-      // Map updatedTodo to DTO
       request_update_todo todoListDTO = new request_update_todo();
       todoListDTO.setId(updatedTodo.getId());
       todoListDTO.setDescraption(updatedTodo.getDescraption());

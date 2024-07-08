@@ -1,5 +1,6 @@
 package task.company.local.controller;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
@@ -80,14 +81,18 @@ public class todoList_controller {
         Authentication authentication = jwtService.getAuthentication(token);
 
         if (authentication == null || !authentication.isAuthenticated()) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid or missing token.");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Token tidak valid.");
         }
 
         CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
         String email = userDetails.getUsername();
 
+        if (dto.getFinishAt().isBefore(LocalDate.now())) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Tanggal ini sudah lewat tidak bisa digunakan.");
+        }
+
         user_entity user = user_service.findByEmail(email)
-                .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElseThrow(() -> new RuntimeException("User tidak ditemukan"));
 
         request_todo newTodo = request_todo.builder()
                 .SubTitle(dto.getSubTitle())
@@ -101,7 +106,7 @@ public class todoList_controller {
 
         if (savedTodo.getUser() == null) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Failed to associate the user with the todo item.");
+                    .body("Tidak bisa membuat to do list.");
         }
 
         long daysBetween = todoList_service.calculateDaysBetweenCreatedAndFinish(savedTodo);
@@ -123,6 +128,9 @@ public class todoList_controller {
     @PatchMapping("/{Id}")
     public ResponseEntity<?> updateTodo(@PathVariable("Id") Long id,
             @RequestBody request_update_todo newTodoData) {
+        if (newTodoData.getFinishAt().isBefore(LocalDate.now())) {
+            throw new IllegalArgumentException("Tanggal ini sudah lewat tidak bisa digunakan.");
+        }
         try {
             request_update_todo updatedTodo = todoList_service.updateTodoEntity(id, newTodoData);
             return ResponseEntity.ok(updatedTodo);
@@ -142,7 +150,7 @@ public class todoList_controller {
             update_checkbox updatedTodo = todoList_service.updateCheckBoxTodo(id, isComplete);
             return ResponseEntity.ok(updatedTodo);
         } catch (EntityNotFoundException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Todo not found with id: " + id);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Tidak ditemukan to do list dengan id: " + id);
         }
     }
 
